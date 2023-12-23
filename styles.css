@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: SF UI Display;
+    font-style: normal;
+    line-height: normal;
+    color: #FFF;
+    background: rgba(26, 26, 26, 0.80);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+}
+
+header {
+    backdrop-filter: blur(10px);
+}
+
+header .container {
+    display: flex;
+    gap: 8px;
+}
+
+.logo {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.logo-elem {
+    color: #F6BD41;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
