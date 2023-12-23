@@ -21,10 +21,10 @@ function renderTrackCover(inputTrackForRendering, trackElement) {
     trackElement.append(coverElement);
 }
 
-export function renderTrack(inputTrackForRendering) {
+export function renderTrack(inputTrackForRendering, trackListElement) {
     let trackElement = document.createElement("div");
     renderTrackTitle(inputTrackForRendering, trackElement);
     renderTrackAudio(inputTrackForRendering, trackElement);
     renderTrackCover(inputTrackForRendering, trackElement);
-    document.body.append(trackElement);
+    trackListElement.append(trackElement);
 }

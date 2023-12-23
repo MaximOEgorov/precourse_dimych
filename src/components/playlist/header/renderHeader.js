@@ -1,17 +1,18 @@
 
-function renderPlayListImg(playlistForRendering) {
+function renderPlayListImg(playlistForRendering, trackListElement) {
+//    let mainContainer = document.getElementById("mainContainer");
     let playlistImageElement = document.createElement("img");
     playlistImageElement.src = playlistForRendering.coverImageUrl;
-    document.body.append(playlistImageElement);
+    trackListElement.appendChild(playlistImageElement);
 }
 
-function renderPlayListTitle(playlistForRendering) {
+function renderPlayListTitle(playlistForRendering, trackListElement) {
     let playlistTitleElement = document.createElement("h2");
     playlistTitleElement.append(playlistForRendering.title);
-    document.body.append(playlistTitleElement);
+    trackListElement.appendChild(playlistTitleElement);
 }
 
-export function renderPlaylistHeader(playlistForRendering) {
-    renderPlayListImg(playlistForRendering);
-    renderPlayListTitle(playlistForRendering);
+export function renderPlaylistHeader(playlistForRendering, trackListElement) {
+    renderPlayListImg(playlistForRendering, trackListElement);
+    renderPlayListTitle(playlistForRendering, trackListElement);
 }
