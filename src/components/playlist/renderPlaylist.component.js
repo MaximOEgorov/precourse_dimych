@@ -1,30 +1,35 @@
 
-function renderTrackTitle(inputTrackForRendering, trackElement) {
+function renderTrackTitle(inputTrackForRendering, thisElement) {
     if (inputTrackForRendering.isHot) {
-        trackElement.append("🔥")
+        thisElement.append("🔥")
     }
-    trackElement.append(
+    thisElement.append(
         inputTrackForRendering.artistName + " - " + inputTrackForRendering.title
     );
 }
 
-function renderTrackAudio(inputTrackForRendering, trackElement) {
+function renderTrackAudio(inputTrackForRendering, thisElement) {
     let playerElement = document.createElement('audio');
     playerElement.src = inputTrackForRendering.fileUrl;
     playerElement.controls = true;
-    trackElement.append(playerElement);
+    thisElement.append(playerElement);
 }
 
-function renderTrackCover(inputTrackForRendering, trackElement) {
+function renderTrackCover(inputTrackForRendering, thisElement) {
     let coverElement = document.createElement('img');
     coverElement.src = inputTrackForRendering.coverImageUrl;
-    trackElement.append(coverElement);
+    coverElement.classList.add("cover")
+    thisElement.append(coverElement);
 }
 
 export function renderTrack(inputTrackForRendering, trackListElement) {
     let trackElement = document.createElement("div");
-    renderTrackTitle(inputTrackForRendering, trackElement);
-    renderTrackAudio(inputTrackForRendering, trackElement);
+    trackElement.classList.add("audiocover-wrapper");
     renderTrackCover(inputTrackForRendering, trackElement);
+    let trackSubElement = document.createElement("div");
+    trackSubElement.classList.add("audio-wrapper");
+    renderTrackTitle(inputTrackForRendering, trackSubElement);
+    renderTrackAudio(inputTrackForRendering, trackSubElement);
+    trackElement.append(trackSubElement)
     trackListElement.append(trackElement);
 }
